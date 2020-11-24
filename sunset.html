@@ -11,15 +11,15 @@
     />
     <title>Website</title>
   </head>
-  <body>
+  <body data-barba="wrapper">
     <header class="nav-header">
-      <h1><a href="./index" id="logo">Days</a></h1>
+      <h1><a href="./index.html" id="logo">Days</a></h1>
       <div class="burger">
         <div class="line1"></div>
         <div class="line2"></div>
       </div>
     </header>
-    <main>
+    <main data-barba="container" data-barba-namespace="sunset">
       <section class="sunset1 detail-slide">
         <div class="sunset-text">
           <h1>sunset1</h1>
@@ -85,6 +85,7 @@
     <div class="swipe swipe2"></div>
     <div class="swipe swipe3"></div>
     <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"
