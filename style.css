@@ -25,6 +25,7 @@ body {
   width: 80%;
   margin: auto;
   padding: 2rem 0rem;
+  z-index: 2;
   position: relative;
 }
 
@@ -197,4 +198,8 @@ body {
 }
 .t-swipe3 {
   background: salmon;
+}
+
+body.hide {
+  overflow: hidden;
 }
