@@ -42,7 +42,6 @@ function animateSlides() {
     const pageT1 = gsap.timeline();
     let nextSlide = slides.length - 1 === index ? "end" : slides[index + 1];
     pageT1.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
-
     pageT1.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
     pageT1.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
 
@@ -63,5 +62,21 @@ function animateSlides() {
       .addTo(controller);
   });
 }
+let mouse = document.querySelector(".cursor");
 
+function cursor(e) {
+  mouse.style.top = e.pageY + "px";
+  mouse.style.left = e.pageX + "px";
+}
+function activeCursor(e) {
+  const item = e.target;
+  if (item.id === "logo" || item.classList.contains("burger")) {
+    mouse.classList.add("nav-active");
+  } else {
+    mouse.classList.remove("nav-active");
+  }
+}
+
+window.addEventListener("mousemove", cursor);
+window.addEventListener("mouseover", activeCursor);
 animateSlides();
